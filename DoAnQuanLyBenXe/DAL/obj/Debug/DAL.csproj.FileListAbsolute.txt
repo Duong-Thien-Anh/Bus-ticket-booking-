@@ -1,0 +1,14 @@
+E:\LapTrinh\MonHK7\PTPhanMemThongMinh\DoAnQuanLyBenXe\DAL\bin\Debug\DAL.dll.config
+E:\LapTrinh\MonHK7\PTPhanMemThongMinh\DoAnQuanLyBenXe\DAL\bin\Debug\DAL.dll
+E:\LapTrinh\MonHK7\PTPhanMemThongMinh\DoAnQuanLyBenXe\DAL\bin\Debug\DAL.pdb
+E:\LapTrinh\MonHK7\PTPhanMemThongMinh\DoAnQuanLyBenXe\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\LapTrinh\MonHK7\PTPhanMemThongMinh\DoAnQuanLyBenXe\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\LapTrinh\MonHK7\PTPhanMemThongMinh\DoAnQuanLyBenXe\DAL\obj\Debug\DAL.dll
+E:\LapTrinh\MonHK7\PTPhanMemThongMinh\DoAnQuanLyBenXe\DAL\obj\Debug\DAL.pdb
+E:\GitHub\XeKhach\Project\DoAnQuanLyBenXe\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\GitHub\XeKhach\Project\DoAnQuanLyBenXe\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\GitHub\XeKhach\Project\DoAnQuanLyBenXe\DAL\obj\Debug\DAL.dll
+E:\GitHub\XeKhach\Project\DoAnQuanLyBenXe\DAL\obj\Debug\DAL.pdb
+E:\GitHub\XeKhach\Project\DoAnQuanLyBenXe\DAL\bin\Debug\DAL.dll.config
+E:\GitHub\XeKhach\Project\DoAnQuanLyBenXe\DAL\bin\Debug\DAL.dll
+E:\GitHub\XeKhach\Project\DoAnQuanLyBenXe\DAL\bin\Debug\DAL.pdb

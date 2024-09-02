@@ -1,0 +1,43 @@
+﻿
+@{
+    var user = ViewData["UserId"];
+    ViewBag.Title = "Comment";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div style="height:90px"></div>
+<div class="background-infuser">
+    <h1 style="text-align:center">HIÊN THỊ THÔNG TIN  </h1>
+    <div class="form-inf-parent">
+        @*đây là div cha để căn giữa div con*@
+        <div class="form-inf">
+            <div class="row">
+                <div class="col">
+                    <div class="inf-menu">
+                        <button onclick="location.href='@Url.Action("InfUser", "LogIn", new {id = user})'"><ion-icon name="person-circle-outline"></ion-icon><span style="font-size:20px; margin-left:8px;">Thông tin tài khoản </span></button>
+                        <button onclick="location.href='@Url.Action("TicketInf","LogIn", new {id = user})'"><ion-icon name="ticket-outline"></ion-icon><span style="font-size: 20px; margin-left: 8px;">Quản lý vé xe</span></button>
+                        <button onclick="location.href='@Url.Action("Comment","LogIn")'"><ion-icon name="chatbox-ellipses-outline"></ion-icon><span style="font-size: 20px; margin-left: 8px;">Đánh giá chuyến đi </span></button>
+                        <button onclick="location.href='@Url.Action("Logout","LogIn")'"><ion-icon name="log-out-outline"></ion-icon><span style="font-size: 20px; margin-left: 8px;">Đăng xuất</span></button>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="show-comment">
+                        <div class="show-comment-child">
+                            <h3>PHẢN HỒI CỦA KHÁCH HÀNG </h3>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Chúng tôi xin ghi nhận những đánh giá tích cực của bạn </label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Viết bình luận tại đây..."></textarea>
+                            </div>
+                            <button type="submit" class="button-comment">Gửi</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBenXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chuyen">
+    <Key>
+      <PropertyRef Name="MaChuyen" />
+    </Key>
+    <Property Name="MaChuyen" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="TenChuyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiemBatDau" Type="char" MaxLength="5" />
+    <Property Name="DiemDen" Type="char" MaxLength="5" />
+    <Property Name="TGChuyen" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="CTDichVu">
+    <Key>
+      <PropertyRef Name="MaDV" />
+      <PropertyRef Name="Xe" />
+    </Key>
+    <Property Name="MaDV" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Xe" Type="char" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DichVu">
+    <Key>
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaDV" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="TenDV" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Ghe">
+    <Key>
+      <PropertyRef Name="SoGhe" />
+      <PropertyRef Name="Xe" />
+    </Key>
+    <Property Name="SoGhe" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="20" />
+    <Property Name="Xe" Type="char" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HangXe">
+    <Key>
+      <PropertyRef Name="MaHangXe" />
+    </Key>
+    <Property Name="MaHangXe" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="TenHangXe" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Khach">
+    <Key>
+      <PropertyRef Name="MaKhach" />
+    </Key>
+    <Property Name="MaKhach" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="CCCD" Type="char" MaxLength="12" />
+    <Property Name="TenKhachHang" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tuoi" Type="int" />
+    <Property Name="SDT" Type="char" MaxLength="11" />
+    <Property Name="TaiKhoan" Type="varchar" MaxLength="10" />
+    <Property Name="MK" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="LichTrinh_Tram">
+    <Key>
+      <PropertyRef Name="MaChuyen" />
+      <PropertyRef Name="MaTram" />
+    </Key>
+    <Property Name="TGdukien" Type="date" Nullable="false" />
+    <Property Name="MaChuyen" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MaTram" Type="char" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoaiXe">
+    <Key>
+      <PropertyRef Name="MaLoaiXe" />
+    </Key>
+    <Property Name="MaLoaiXe" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="TenLoaiXe" Type="nvarchar" MaxLength="30" />
+    <Property Name="SoGhe" Type="int" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNhanVien" />
+    </Key>
+    <Property Name="MaNhanVien" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="TenNhanVien" Type="nvarchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="20" />
+    <Property Name="Quyen" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="TinhThanh">
+    <Key>
+      <PropertyRef Name="MaTinh" />
+    </Key>
+    <Property Name="MaTinh" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="TenTinh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tram">
+    <Key>
+      <PropertyRef Name="MaTram" />
+    </Key>
+    <Property Name="MaTram" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="TenTram" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaTinh" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Ve">
+    <Key>
+      <PropertyRef Name="MaVe" />
+    </Key>
+    <Property Name="MaVe" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="NgayDat" Type="date" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaKhach" Type="char" MaxLength="5" />
+    <Property Name="SoGhe" Type="char" MaxLength="2" />
+    <Property Name="Xe" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Xe">
+    <Key>
+      <PropertyRef Name="MaXe" />
+    </Key>
+    <Property Name="MaXe" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="SoXe" Type="varchar" MaxLength="10" />
+    <Property Name="MaChuyen" Type="char" MaxLength="5" />
+    <Property Name="TenTaiXe" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoaiXe" Type="char" MaxLength="5" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaHangXe" Type="char" MaxLength="5" />
+    <Property Name="TGXuatPhat" Type="datetime" />
+    <Property Name="TGHuyVe" Type="time" Precision="7" />
+    <Property Name="Gia" Type="int" />
+  </EntityType>
+  <Association Name="FK__Chuyen__DiemBatD__4E88ABD4">
+    <End Role="TinhThanh" Type="Self.TinhThanh" Multiplicity="0..1" />
+    <End Role="Chuyen" Type="Self.Chuyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TinhThanh">
+        <PropertyRef Name="MaTinh" />
+      </Principal>
+      <Dependent Role="Chuyen">
+        <PropertyRef Name="DiemBatDau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chuyen__DiemDen__4F7CD00D">
+    <End Role="TinhThanh" Type="Self.TinhThanh" Multiplicity="0..1" />
+    <End Role="Chuyen" Type="Self.Chuyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TinhThanh">
+        <PropertyRef Name="MaTinh" />
+      </Principal>
+      <Dependent Role="Chuyen">
+        <PropertyRef Name="DiemDen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTDichVu__MaDV__5070F446">
+    <End Role="DichVu" Type="Self.DichVu" Multiplicity="1" />
+    <End Role="CTDichVu" Type="Self.CTDichVu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DichVu">
+        <PropertyRef Name="MaDV" />
+      </Principal>
+      <Dependent Role="CTDichVu">
+        <PropertyRef Name="MaDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTDichVu__Xe__5165187F">
+    <End Role="Xe" Type="Self.Xe" Multiplicity="1" />
+    <End Role="CTDichVu" Type="Self.CTDichVu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xe">
+        <PropertyRef Name="MaXe" />
+      </Principal>
+      <Dependent Role="CTDichVu">
+        <PropertyRef Name="Xe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ghe__Xe__52593CB8">
+    <End Role="Xe" Type="Self.Xe" Multiplicity="1" />
+    <End Role="Ghe" Type="Self.Ghe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xe">
+        <PropertyRef Name="MaXe" />
+      </Principal>
+      <Dependent Role="Ghe">
+        <PropertyRef Name="Xe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LichTrinh__MaChu__534D60F1">
+    <End Role="Chuyen" Type="Self.Chuyen" Multiplicity="1" />
+    <End Role="LichTrinh_Tram" Type="Self.LichTrinh_Tram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chuyen">
+        <PropertyRef Name="MaChuyen" />
+      </Principal>
+      <Dependent Role="LichTrinh_Tram">
+        <PropertyRef Name="MaChuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LichTrinh__MaTra__5441852A">
+    <End Role="Tram" Type="Self.Tram" Multiplicity="1" />
+    <End Role="LichTrinh_Tram" Type="Self.LichTrinh_Tram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tram">
+        <PropertyRef Name="MaTram" />
+      </Principal>
+      <Dependent Role="LichTrinh_Tram">
+        <PropertyRef Name="MaTram" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tram__MaTinh__5535A963">
+    <End Role="TinhThanh" Type="Self.TinhThanh" Multiplicity="0..1" />
+    <End Role="Tram" Type="Self.Tram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TinhThanh">
+        <PropertyRef Name="MaTinh" />
+      </Principal>
+      <Dependent Role="Tram">
+        <PropertyRef Name="MaTinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ve__5629CD9C">
+    <End Role="Ghe" Type="Self.Ghe" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ghe">
+        <PropertyRef Name="SoGhe" />
+        <PropertyRef Name="Xe" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="SoGhe" />
+        <PropertyRef Name="Xe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ve__MaKhach__571DF1D5">
+    <End Role="Khach" Type="Self.Khach" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khach">
+        <PropertyRef Name="MaKhach" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="MaKhach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Xe__LoaiXe__5812160E">
+    <End Role="LoaiXe" Type="Self.LoaiXe" Multiplicity="0..1" />
+    <End Role="Xe" Type="Self.Xe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiXe">
+        <PropertyRef Name="MaLoaiXe" />
+      </Principal>
+      <Dependent Role="Xe">
+        <PropertyRef Name="LoaiXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Xe__MaChuyen__59063A47">
+    <End Role="Chuyen" Type="Self.Chuyen" Multiplicity="0..1" />
+    <End Role="Xe" Type="Self.Xe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chuyen">
+        <PropertyRef Name="MaChuyen" />
+      </Principal>
+      <Dependent Role="Xe">
+        <PropertyRef Name="MaChuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Xe__MaHangXe__59FA5E80">
+    <End Role="HangXe" Type="Self.HangXe" Multiplicity="0..1" />
+    <End Role="Xe" Type="Self.Xe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangXe">
+        <PropertyRef Name="MaHangXe" />
+      </Principal>
+      <Dependent Role="Xe">
+        <PropertyRef Name="MaHangXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLBenXeModelStoreContainer">
+    <EntitySet Name="Chuyen" EntityType="Self.Chuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTDichVu" EntityType="Self.CTDichVu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DichVu" EntityType="Self.DichVu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ghe" EntityType="Self.Ghe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HangXe" EntityType="Self.HangXe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khach" EntityType="Self.Khach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LichTrinh_Tram" EntityType="Self.LichTrinh_Tram" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiXe" EntityType="Self.LoaiXe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TinhThanh" EntityType="Self.TinhThanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tram" EntityType="Self.Tram" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ve" EntityType="Self.Ve" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Xe" EntityType="Self.Xe" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Chuyen__DiemBatD__4E88ABD4" Association="Self.FK__Chuyen__DiemBatD__4E88ABD4">
+      <End Role="TinhThanh" EntitySet="TinhThanh" />
+      <End Role="Chuyen" EntitySet="Chuyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chuyen__DiemDen__4F7CD00D" Association="Self.FK__Chuyen__DiemDen__4F7CD00D">
+      <End Role="TinhThanh" EntitySet="TinhThanh" />
+      <End Role="Chuyen" EntitySet="Chuyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTDichVu__MaDV__5070F446" Association="Self.FK__CTDichVu__MaDV__5070F446">
+      <End Role="DichVu" EntitySet="DichVu" />
+      <End Role="CTDichVu" EntitySet="CTDichVu" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTDichVu__Xe__5165187F" Association="Self.FK__CTDichVu__Xe__5165187F">
+      <End Role="Xe" EntitySet="Xe" />
+      <End Role="CTDichVu" EntitySet="CTDichVu" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ghe__Xe__52593CB8" Association="Self.FK__Ghe__Xe__52593CB8">
+      <End Role="Xe" EntitySet="Xe" />
+      <End Role="Ghe" EntitySet="Ghe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LichTrinh__MaChu__534D60F1" Association="Self.FK__LichTrinh__MaChu__534D60F1">
+      <End Role="Chuyen" EntitySet="Chuyen" />
+      <End Role="LichTrinh_Tram" EntitySet="LichTrinh_Tram" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LichTrinh__MaTra__5441852A" Association="Self.FK__LichTrinh__MaTra__5441852A">
+      <End Role="Tram" EntitySet="Tram" />
+      <End Role="LichTrinh_Tram" EntitySet="LichTrinh_Tram" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tram__MaTinh__5535A963" Association="Self.FK__Tram__MaTinh__5535A963">
+      <End Role="TinhThanh" EntitySet="TinhThanh" />
+      <End Role="Tram" EntitySet="Tram" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ve__5629CD9C" Association="Self.FK__Ve__5629CD9C">
+      <End Role="Ghe" EntitySet="Ghe" />
+      <End Role="Ve" EntitySet="Ve" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ve__MaKhach__571DF1D5" Association="Self.FK__Ve__MaKhach__571DF1D5">
+      <End Role="Khach" EntitySet="Khach" />
+      <End Role="Ve" EntitySet="Ve" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Xe__LoaiXe__5812160E" Association="Self.FK__Xe__LoaiXe__5812160E">
+      <End Role="LoaiXe" EntitySet="LoaiXe" />
+      <End Role="Xe" EntitySet="Xe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Xe__MaChuyen__59063A47" Association="Self.FK__Xe__MaChuyen__59063A47">
+      <End Role="Chuyen" EntitySet="Chuyen" />
+      <End Role="Xe" EntitySet="Xe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Xe__MaHangXe__59FA5E80" Association="Self.FK__Xe__MaHangXe__59FA5E80">
+      <End Role="HangXe" EntitySet="HangXe" />
+      <End Role="Xe" EntitySet="Xe" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

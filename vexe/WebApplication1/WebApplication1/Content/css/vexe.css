@@ -1,0 +1,1017 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Now Text",Helvetica,Arial,sans-serif;
+}
+
+/* Thiết lập background */
+body {
+    font-family: "Helvetica Now Text",Helvetica,Arial,sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.body-background {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    /* background: url(img/BackgroundWebBanHoa.jpg) no-repeat; */
+    background-color: black;                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    background-size: cover;
+    background-position: center;
+}
+/* -------------------------------------------------------------------- */
+/* Thiết lập thanh đăng kí và đăng nhập */
+.login-register {
+}
+/* -------------------------------------------------------------------- */
+/* Thiết lập navbar*/
+.content {
+    padding: 100px 20px; /* Để tránh nội dung bị che khuất bởi navbar */
+}
+
+.logo {
+    font-size: 2em;
+    color: black;
+    user-select: none;
+}
+
+
+.img-logo {
+    width: 200px;
+    height: 60px;
+}
+
+.navigations a {
+    position: relative;
+    font-size: 1.1em;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+    .navigations a::after {
+        width: 100%;
+        height: 3px;
+        left: 0;
+        bottom: -6px;
+        background: black;
+        border-radius: 5px;
+        content: '';
+        position: absolute;
+        transform: scaleX(0);
+        transition: transform .5s;
+        transform-origin: right;
+    }
+
+    .navigations a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+/*Thiết lập thanh tìm kiếm */
+.box-search {
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    float: left;
+}
+
+    .box-search:hover input {
+        width: 400px;
+    }
+
+    .box-search input {
+        width: 0;
+        border: none;
+        outline: none;
+        font-weight: 500;
+        transition: 0.5s;
+        background: transparent;
+    }
+
+box-search a .fas {
+    color: #1daf;
+    font-size: 18px;
+}
+/*Thiết lập cart-shopping*/
+.cart-shopping {
+    height: 40px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    float: right;
+}
+
+.user-login {
+    height: 40px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu trong 0.3 giây với chế độ dễ dàng */
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    float: left;
+}
+
+    .user-login:hover {
+        color: #249EFE; /* Màu sẽ thay đổi khi con trỏ được đưa vào */
+    }
+/* -------------------------------------------------------------------- */
+/* Thiết lập form đăng nhập và đăng kí  */
+.theme-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../img/img1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+    .wrapper.active-popup {
+        transform: scale(1);
+    }
+
+    .wrapper.active {
+        height: 720px;
+    }
+
+    .wrapper .form-box {
+        width: 100%;
+        padding: 40px;
+    }
+
+        .wrapper .form-box.login {
+            transition: transform .18s ease;
+            transform: translateX(0);
+        }
+
+    .wrapper.active .form-box.login {
+        transition: none;
+        transform: translateX(-400px);
+    }
+
+    .wrapper .form-box.register {
+        position: absolute;
+        transition: none;
+        transform: translateX(400px);
+    }
+
+    .wrapper.active .form-box.register {
+        transition: transform .18s ease;
+        transform: translateX(0);
+    }
+
+.form-box h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+
+    .input-box label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        font-size: 1em;
+        color: black;
+        font-weight: 500;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    .input-box input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        color: black;
+        font-weight: 600;
+        padding: 0 35px 0 5px;
+    }
+
+        .input-box input:focus ~ label,
+        .input-box input:valid ~ label {
+            top: -5px;
+        }
+
+    .input-box .icon {
+        position: absolute;
+        right: 8px;
+        font-size: 1.2em;
+        color: black;
+        line-height: 57px;
+    }
+
+.remember-forgot {
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .remember-forgot label input {
+        accent-color: black;
+        margin-right: 3px;
+    }
+
+    .remember-forgot a {
+        color: black;
+        text-decoration: none;
+    }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+.btn-login {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+    .login-register p a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .login-register p a:hover {
+            text-decoration: underline;
+        }
+/*/* -------------------------------------------------------------------- */
+.area-input-button {
+    width: 900px;
+    height: 60px;
+    display: flex;
+    /*    border: 2px solid black;*/
+}
+
+.area-input {
+    width: 700px;
+    height: 60px;
+    display: flex;
+    margin-right: 70px;
+    /*   border: 2px solid red;*/
+}
+/* -------------------------------------------------------------------- */
+/*box1*/
+.box-input1 {
+    width: 175px;
+    height: 60px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 2px solid #DCDDDE;
+    border-right: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input1 {
+    width: 80%;
+    height: 50px;
+    border: none;
+    padding-left: 2%;
+    text-decoration: none;
+}
+
+.fa-circle-dot {
+    font-size: 20px;
+    color: #0A84F6;
+    font-weight: bold;
+}
+/* -------------------------------------------------------------------- */
+/*box2*/
+.box-input2 {
+    width: 175px;
+    height: 60px;
+    border: 2px solid #DCDDDE;
+    border-right: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input2 {
+    width: 80%;
+    height: 50px;
+    border: none;
+    padding-left: 2%;
+    text-decoration: none;
+}
+
+.fa-location-dot {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+}
+/* -------------------------------------------------------------------- */
+/*box3*/
+.box-input3 {
+    width: 175px;
+    height: 60px;
+    border: 2px solid #DCDDDE;
+    border-right: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input3 {
+    width: 80%;
+    height: 50px;
+    border: none;
+    padding-left: 2%;
+    text-decoration: none;
+}
+
+.fa-calendar-days {
+    font-size: 20px;
+    color: #0A84F6;
+    font-weight: bold;
+}
+/* -------------------------------------------------------------------- */
+/*box4*/
+.box-input4 {
+    width: 175px;
+    height: 60px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 2px solid #DCDDDE;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input4 {
+    width: 80%;
+    height: 50px;
+    border: none;
+    padding-left: 2%;
+    text-decoration: none;
+}
+
+.fa-plus {
+    font-size: 20px;
+    color: #0A84F6;
+    font-weight: bold;
+}
+/* -------------------------------------------------------------------- */
+/*button searching */
+.search-btn {
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #FCCC0A;
+    color: black;
+    border: none;
+}
+
+/* -------------------------------------------------------------------- */
+/* Thiết lập footer */
+.footer {
+    width: auto;
+    height: 500px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-1 {
+    color: black;
+}
+
+.text-footer {
+    text-align: center;
+}
+
+.icon-footer {
+    color: black;
+}
+
+    .icon-footer i {
+        width: 50%;
+        height: 50%;
+    }
+
+.column {
+    width: 33%;
+    float: left;
+}
+/* -------------------------------------------------------------------- */
+/*Điều chỉnh scroll thêm nổi bật*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#720979,#00d4ff);
+    border-radius: 20px;
+}
+/* -------------------------------------------------------------------- */
+/*Điều chỉnh các input có type number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/*---------------------------------------------------*/
+/*Đây là phần của index*/
+.theme {
+    background: url('../img/img2.jpg');
+    width: auto;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.content1-index h1 {
+    color: white;
+}
+
+.menu-mini {
+    background-color: #fff;
+    width: 1000px;
+    height: 180px;
+    border-radius: 30px;
+}
+
+.red {
+    width: 100%;
+    height: 40%;
+    background-color: none;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom: 1px solid #EDF0F1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.blue {
+    width: 100%;
+    height: 110px;
+    background-color: none;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top: 1px solid #EDF0F1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.area-input-button {
+    align-items: center;
+    display: flex;
+}
+
+.function {
+    display: flex; /* Sử dụng Flexbox để chứa các div trên cùng một hàng */
+    /*justify-content: space-between;*/ /* Các div nằm cách xa nhau theo chiều ngang */
+}
+
+.box {
+    width: 150px; /* Độ rộng của mỗi div (có thể điều chỉnh theo nhu cầu) */
+    height: 42px; /* Chiều cao của mỗi div (có thể điều chỉnh theo nhu cầu) */
+    border: 2px solid #EDF0F1; /* Kẻ khung cho từng div */
+    text-align: center;
+    /*   line-height: 100px;  Dọc trung nội dung */
+    margin: 0;
+}
+
+.box-first {
+    width: 150px; /* Độ rộng của mỗi div (có thể điều chỉnh theo nhu cầu) */
+    height: 42px; /* Chiều cao của mỗi div (có thể điều chỉnh theo nhu cầu) */
+    border: 2px solid #EDF0F1; /* Kẻ khung cho từng div */
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    text-align: center;
+    /*   line-height: 100px;  Dọc trung nội dung */
+    margin: 0;
+}
+
+.box-last {
+    width: 150px; /* Độ rộng của mỗi div (có thể điều chỉnh theo nhu cầu) */
+    width: 150px; /* Độ rộng của mỗi div (có thể điều chỉnh theo nhu cầu) */
+    height: 42px; /* Chiều cao của mỗi div (có thể điều chỉnh theo nhu cầu) */
+    border: 2px solid #EDF0F1; /* Kẻ khung cho từng div */
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-align: center;
+    /*   line-height: 100px;  Dọc trung nội dung */
+    margin: 0;
+}
+
+.button-finding {
+    padding-left: 10px;
+}
+
+.content2-index {
+    width: auto;
+    height: 600px;
+    background-color: black !important;
+}
+
+.carousel {
+    width: 600px;
+    height: 400px;
+}
+/* -------------------------------------------------------------------- */
+/*Thiết lập trang tìm chuyến xe */
+.theme-timchuyen {
+    width: 100%;
+    height: auto;
+    /*    background-color: red;*/
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: url('../img/img2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
+
+.content-timchuyen {
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+    padding-top: 3%;
+    margin-top: 20px;
+    border-radius: 20px;
+    overflow;
+    color: black;
+}
+
+content-timchuyen h2 {
+    text-align: center;
+    color: #615B58;
+}
+
+.img-xe {
+    max-width: 100%; /* Giới hạn kích thước tối đa của hình ảnh */
+    max-height: 100%; /* Giới hạn chiều cao tối đa của hình ảnh */
+    height: 200px; /* Đảm bảo tỷ lệ khung hình bảo toàn */
+    width: 300px; /* Đảm bảo tỷ lệ khung hình bảo toàn */
+    border-radius: 10px;
+}
+
+.img-xe-container {
+    position: relative;
+    max-width: 100%; /* Giới hạn kích thước tối đa của hình ảnh */
+    max-height: 100%; /* Giới hạn chiều cao tối đa của hình ảnh */
+    width: 300px; /* Đặt chiều rộng của ô vuông */
+    height: 400px; /* Đặt chiều cao của ô vuông */
+    text-align: center;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.bieutuong {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-items: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 250px;
+    height: 30px;
+    color: white;
+    background-color: green; /* Đặt màu nền với độ trong suốt */
+}
+
+.text-timchuyen {
+    text-align: center;
+}
+
+.inf-timchuyen {
+    width: 550px;
+    height: 320px;
+    border-radius: 15px;
+    position: relative;
+    background-color: white;
+    /*    background: transparent;*/
+    border: 2px solid white;
+    /*    backdrop-filter: blur(20px);*/
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height .2s ease;
+    margin-left: 30px;
+}
+
+    .inf-timchuyen .card-timchuyen {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .inf-timchuyen.active {
+        height: 750px;
+    }
+
+    /*.inf-timchuyen .card-timchuyen.inf{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.inf-timchuyen.active .card-timchuyen.inf{
+     transition: none;
+    transform: translate(-600px);
+}*/
+    .inf-timchuyen .card-timchuyen chonchuyen {
+        position: absolute;
+        transition: none;
+        transform: translate(600px);
+    }
+
+    .inf-timchuyen.active .card-timchuyen chonchuyen {
+        transition: transform .18s ease;
+        transform: translateX(0);
+    }
+/* -------------------------------------------------------------------- */
+/*Thiết lập trang thông tin khách hàng*/
+.content-InfUser {
+}
+
+.background-infuser {
+    background-color: #EDEBEA;
+    background width: 100%;
+    height: 900px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.background-form-inf {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.7); /* Thêm một màu nền với độ trong suốt */
+    padding: 20px;
+    border-radius: 10px; /* Bo góc nếu bạn muốn */
+    box-sizing: border-box;
+    height: 400px;
+}
+/* -------------------------------------------------------------------- */
+/*thiết lập menu*/
+.inf-menu {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; /* Xếp theo chiều dọc **/
+    padding-left: 20px;
+    padding-top: 30px;
+    position: relative;
+    background: transparent;
+    border: 2px solid white;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+
+    .inf-menu a {
+        padding: 8px; /* Điều chỉnh khoảng cách giữa các biểu tượng */
+        color: #333; /* Màu chữ của các biểu tượng */
+        font-size: 40px; /* Kích thước của biểu tượng, điều chỉnh theo nhu cầu của bạn */
+        align-items: center; /* Căn giữa theo chiều ngang */
+        display: flex; /* Container của biểu tượng và chữ là Flexbox */
+    }
+
+        .inf-menu a:hover {
+            color: #249EFE; /* Màu sẽ thay đổi khi con trỏ được đưa vào */
+        }
+
+.form-inf-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-inf {
+    background-color: NONE;
+    width: 1000px;
+    height: 300px;
+    display: flex;
+}
+/* -------------------------------------------------------------------- */
+/*form thông tin cá nhân khách hàng*/
+
+.show-inf {
+    background-color: white;
+    width: 650px;
+    height: 300px;
+    border-radius: 15px;
+    position: relative;
+    border: 2px solid white;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+
+.show-inf-child {
+    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: center;
+    margin: auto;
+    padding-left: 20px;
+}
+/* -------------------------------------------------------------------- */
+/*form quản lý vé xe cá nhân*/
+.check-gioitinh {
+    display: flex;
+}
+
+.form-check {
+    margin-right: 10px;
+}
+
+.show-ticket {
+    background-color: white;
+    width: 550px;
+    height: 300px;
+    border-radius: 15px;
+    margin-left: 30px;
+    overflow:auto;
+}
+
+.show-ticket-child {
+    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: center;
+    margin: auto;
+}
+
+.card-ticket-header {
+    width: 550px;
+    height: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: red;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.CardTicketText {
+    width: 550px;
+    height: 250px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative;
+    background: transparent;
+    border: 2px solid white;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    transition: height .2s ease;
+}
+
+    .CardTicketText .form-card {
+        width: 100%;
+        padding: 40px;
+
+    }
+
+    .CardTicketText.active {
+        height: 250px;
+        overflow: auto;
+    }
+
+    .CardTicketText .form-card.vedat {
+        /*            display:none;*/
+        transition: transform .18s ease;
+        transform: translateX(0);
+    }
+
+    .CardTicketText.active .form-card.vedat {
+        transition: none;
+        transform: translate(-600px);
+    }
+
+    .CardTicketText .form-card.vehuy {
+        position: absolute;
+
+        transform: translate(600px);
+    }
+
+    .CardTicketText.active .form-card.vehuy {
+        transition: transform .18s ease;
+        transform: translateX(0);
+    }
+/* -------------------------------------------------------------------- */
+/*form đánh giá phản hồi của khách hàng*/
+.show-comment-child {
+    background-color: none;
+    width: 650px;
+    height: 300px;
+}
+
+.button-comment {
+    width: 80px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #0A84F6;
+    color: white;
+    border: none;
+}
+/* -------------------------------------------------------------------- */
+/*làm trang Getxewithchuyen*/
+.background-chonxe {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    overflow: auto; /* Đảm bảo container có thể cuộn nếu nội dung vượt quá kích thước */
+    display: flex;
+    justify-content: center;
+
+}
+.content-xnchuyen {
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+    padding-top: 3%;
+    margin-top: 20px;
+    border-radius: 20px;
+    overflow;
+    color: black;
+}
+.text-xnchuyen {
+    width: auto;
+    height: 70px;
+    background-color: red;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Hiển thị nội dung dưới dạng cột */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    text-align: center; /* Căn giữa văn bản theo chiều ngang */
+}
+.inf-xnchuyen {
+    width: 550px;
+    height: 350px;
+    border-radius: 15px;
+    position: relative;
+    background-color: white;
+    /*    background: transparent;*/
+    border: 2px solid white;
+    /*    backdrop-filter: blur(20px);*/
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height .2s ease;
+    margin-left: 30px;
+}
+.btn-xnchuyen {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(36, 116, 229);
+    color: white;
+    border-radius: 15px;
+    border: none;
+}
+/* -------------------------------------------------------------------- */
+/*Điều chỉnh trang giới thiệu*/
+.background-AboutUs {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 100%; /* Sử dụng chiều cao 100% của body */
+}
+.card-aboutus {
+    margin: 0 auto; /* Margin trên và dưới là 0, margin trái và phải tự động căn giữa */
+    
+}
+.card-boss {
+    width:400px;
+    height:500px;
+    background-color: white;
+    border-radius:15px;
+}
+.img-boss {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 300px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+ 
+}
+.img-boss-child {
+    /*    width: 400px;
+    height: 300px;*/
+    width: 200px; /* Đặt kích thước của hình tròn */
+    height: 200px;
+    overflow: hidden; /* Loại bỏ phần thừa của hình tròn */
+    border-radius: 50%; /* Làm tròn hình ảnh */
+    box-shadow: 0 0 0 4px white, /* Viền màu đỏ đậm */
+    0 0 0 10px rgb(36, 116, 229); /* Viền màu xanh đậm */
+}
+.ava {
+    width: 100%; /* Đảm bảo hình ảnh điền hết vào khung hình tròn */
+    height: auto; /* Tự động tính chiều cao dựa trên tỷ lệ khung */
+    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+}
+.card-boss-text {
+    width: 400px;
+    height: 200px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: none;
+    text-align:center;
+}

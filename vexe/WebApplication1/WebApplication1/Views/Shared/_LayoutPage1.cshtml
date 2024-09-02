@@ -1,0 +1,174 @@
+﻿@{ 
+    var UserId = Session["UserId"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-wid
+    th, initial-scale=1.0">
+    <!-- đây là phần của css -->
+    <link rel="stylesheet" href="~/Content/css/vexe.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- đây là phần của js -->
+    <script src="~/Content/js/vexe.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- đây là phần lấy nguồn để có icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script type="module" src=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Trang chủ chính</title>
+</head>
+<body>
+    <!-- Navbar và menu -->
+    <!-- Header-->
+    <header>
+        <div class="logo"><a href="@Url.Action("Index","Home")"><img src="~/Content/img/Logo.png" class="img-logo"></a></div>
+        <nav class="navigations">
+            @Html.ActionLink("Tìm chuyến", "Index", "Home")
+            @Html.ActionLink("Giới thiệu", "AboutUs", "Home")
+            @Html.ActionLink("Hỗ trợ", "TroThanhDoiTac", "Home")
+        </nav>
+        <div class="feature">
+            <div class="box-search">
+                <input type="text" name="search" class="search" placeholder="Search...">
+                <a>
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            @if (UserId == null)
+            {
+                <div class="user-login" onclick="location.href='@Url.Action("Login", "LogIn")'">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </div>
+            }
+            else
+            {
+                <div class="user-login" onclick="getInfUser()">
+                    <input name="id" id="id" value="@UserId.ToString()" hidden="hidden" />
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </div>
+            }
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <div class="hel"></div>
+    <div style="clear:both"></div>
+    <!--footer-->
+    <footer class="text-center text-lg-start text-white"
+            style="background-color: #1c2331">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-between p-4"
+                 style="background-color: rgb(36, 116, 229)">
+            <!-- Left -->
+            <div class="me-5">
+                <span>Kết nối với chúng tôi</span>
+            </div>
+            <!-- Left -->
+            <!-- Right -->
+            <div>
+                <a href="#" class="text-white me-4">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold">Vé Xe Hay</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            Chuyên cung cấp dịch vụ phương tiện tốt nhất
+                        </p>
+                        <p>
+                            Phù hợp với nhiều đối tượng
+                        </p>
+                        <p>
+                            Giá cả hợp lí
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Danh mục</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            @Html.ActionLink("Trang chủ", "Index", "Home", null, new { @class = "text-white", style = "text-decoration: none;" })
+                        </p>
+                        <p>
+                            @Html.ActionLink("Về chúng tôi", "About", "Home", null, new { @class = "text-white", style = "text-decoration: none;" })
+                        </p>
+                        <p>
+                            @Html.ActionLink("Hỗ trợ", "Index", "Home", null, new { @class = "text-white", style = "text-decoration: none;" })
+                        </p>
+                        <p>
+                            @Html.ActionLink("Tin tức", "Index", "Home", null, new { @class = "text-white", style = "text-decoration: none;" })
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Liên hệ</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p><i class="fas fa-home mr-3"></i> 91/1 Nguyễn Hữu Cảnh, Phường 22, Quận Bình Thạnh, TP. HCM</p>
+                        <p><i class="fas fa-envelope mr-3"></i> <a href="mailto:vexehayvn@gmail.com">vexehayvn@gmail.com</a></p>
+                        <p><i class="fas fa-phone mr-3"></i> + 84 0375 105 041</p>
+                        <p><i class="fas fa-print mr-3"></i> + 84 0375 106 042</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: white ; color :black ;">
+            Bản quyền © 2023 thuộc về:
+            @Html.ActionLink("Vexehay", "Index", "Home", null, new { @class = "text-black", style = "text-decoration: none; color : black ;" })
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <!-- ------------------------------- -->
+
+</body>
+</html>
+<script>
+    function getInfUser() {
+        var userId = document.getElementById('id').value;
+        location.href = '@Url.Action("InfUser", "LogIn")/' + userId;
+    }
+</script>

@@ -1,0 +1,109 @@
+﻿@model IEnumerable<WebApplication1.Models.Ve>
+@{
+    var UserId = Session["UserId"];
+    ViewBag.Title = "TicketInf";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div style="height:90px"></div>
+<div class="background-infuser">
+    <video autoplay loop muted>
+        <source src="~/Content/video/background-inf.mp4" type="video/mp4">
+    </video>
+    <div class="background-form-inf">
+        <h1 style="text-align:center; color : red;"><b>THÔNG TIN VÉ XE</b></h1>
+        <div class="form-inf-parent">
+            <div class="form-inf">
+                <div class="row">
+                    <div class="col">
+                        <div class="inf-menu">
+                            <a onclick="location.href='@Url.Action("InfUser","LogIn",new {id = UserId.ToString()})'" href="#" style="text-decoration:none;"><ion-icon name="person-circle-outline"></ion-icon><span style="font-size:20px; margin-left:8px;">Thông tin tài khoản </span></a>
+                            <a onclick="location.href='@Url.Action("TicketInf","LogIn")'" href="#" style="text-decoration:none;"><ion-icon name="ticket-outline"></ion-icon><span style="font-size:20px; margin-left:8px;">Quản lý vé xe</span></a>
+                            <a onclick="location.href='@Url.Action("Logout","LogIn")'" href="#" style="text-decoration:none;"><ion-icon name="log-out-outline"></ion-icon><span style="font-size: 20px; margin-left: 8px;">Đăng xuất</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="show-ticket">
+                        <div class="show-ticket-child">
+                            <div class="card-ticket-header">
+                                <nav class="navigations">
+                                    <div class="card-ticket-header-child" style="text-align:center;">
+                                        <a href="#" class="vedat-link" style="color:white;"><b>Vé đặt</b></a>
+                                        <a href="#" class="vehuy-link" style="color:white;"><b>Vé hủy</b></a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="CardTicketText">
+                                <div class="form-card vedat">
+                                    @if (Model != null)
+                                    {
+
+                                        foreach (WebApplication1.Models.Ve item in Model)
+                                        {
+                                            if (item.TrangThai == "Đã đặt")
+                                            {
+                                                <div class=" row" style="text-align:left;">
+                                                    <div class="col">
+                                                        <p id="MaVe">Mã vé:@item.MaVe</p>
+                                                        <p id="NgayDat">Ngày đặt @item.NgayDat.Value.Date</p>
+                                                        <p id="TrangThai">Trạng thái: @item.TrangThai</p>
+                                                    </div>
+                                                    <div class="col" style="margin-left:20px;">
+                                                        <p id="MaKhach">Mã khách: @item.MaKhach</p>
+                                                        <p id="SoGhe">Số ghế ngồi: @item.SoGhe</p>
+                                                        <p id="Xe">Mã xe: @item.Xe</p>
+                                                    </div>
+                                                </div>
+                                                <button style="border-radius: 10px; background-color: rgb(36, 116, 229); color: white ; width:100px ;height:30px; border:none;">Hủy vé</button>
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @ViewBag.EmptyVe
+                                    }
+                                </div>
+                                <div class="form-card vehuy">
+                                    @if (Model != null)
+                                    {
+
+                                        foreach (WebApplication1.Models.Ve item in Model)
+                                        {
+                                            if (item.TrangThai == "Đã hủy")
+                                            {
+                                                <div class=" row" style="text-align:left;">
+                                                    <div class="col">
+                                                        <p id="MaVe">Mã vé:@item.MaVe</p>
+                                                        <p id="NgayDat">Ngày đặt @item.NgayDat.Value.Date</p>
+                                                        <p id="TrangThai">Trạng thái: @item.TrangThai</p>
+                                                    </div>
+                                                    <div class="col" style="margin-left:20px;">
+                                                        <p id="MaKhach">Mã khách: @item.MaKhach</p>
+                                                        <p id="SoGhe">Số ghế ngồi: @item.SoGhe</p>
+                                                        <p id="Xe">Mã xe: @item.Xe</p>
+                                                    </div>
+                                                </div>
+                                                <button style="border-radius: 10px; background-color: rgb(36, 116, 229); color: white ; width:100px ;height:30px; border:none;">Hủy vé</button>
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @ViewBag.EmptyVe
+                                    }
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

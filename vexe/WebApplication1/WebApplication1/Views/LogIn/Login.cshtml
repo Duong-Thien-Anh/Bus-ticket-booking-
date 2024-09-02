@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Login</h2>
+<div class="theme-login">
+    <!--form sign in & register-->
+    <div class="wrapper">
+        <!-- form sign in-->
+        <div class="form-box login">
+            <h2>Đăng nhập</h2>
+            <p>@ViewBag.NotFound</p>
+            <form action="@Url.Action("Signin","LogIn")" method="get">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input name="username" id="username" required>
+                    <label>Tài khoản</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="Password" id="password" name="password" required>
+                    <label>Mật khẩu</label>
+                </div>
+
+
+                <button type="submit" class="btn-login">Đăng nhập</button>
+
+                <div class="login-register">
+                    <p>Bạn chưa có tài khoản ? <a href="#" class="register-link">Đăng ký</a></p>
+                </div>
+            </form>
+        </div>
+        <!-- form register-->
+        <div class="form-box register">
+            <h2>Đăng ký</h2>
+            <h4>@ViewBag.RegFailed</h4><h4>@ViewBag.RegSuccess</h4>
+            <form action="@Url.Action("Signup","LogIn")" method="post">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="text" id="name" name="name" required>
+                    <label>Họ và tên</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input id="username" name="username" required>
+                    <label>Tài khoản</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="Password" id="password" name="password" required>
+                    <label>Mật khẩu</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input maxlength="2" type="number" id="tuoi" name="tuoi" required>
+                    <label>Tuổi</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input maxlength="12" minlength="12" type="number" id="CCCD" name="CCCD" required>
+                    <label>Căn cước công dân</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input maxlength="11" minlength="11" type="number" id="SDT" name="SDT" required>
+                    <label>Số điện thoại</label>
+                </div>
+
+                <button type="submit" class="btn-login">Đăng ký</button>
+
+                <div class="login-register">
+                    <p>You already have account ? <a href="#" class="login-link">Login</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+

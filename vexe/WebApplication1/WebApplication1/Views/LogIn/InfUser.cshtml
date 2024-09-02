@@ -1,0 +1,64 @@
+﻿@model WebApplication1.Models.Khach
+@{
+    var UserId = Session["UserId"];
+    ViewBag.Title = "InfUser";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div style="height:90px"></div>
+<div class="background-infuser">
+    <video autoplay loop muted>
+        <source src="~/Content/video/background-inf.mp4" type="video/mp4">
+    </video>
+    <div class="background-form-inf">
+        <h1 style="text-align:center; color : red;"><b>Chào mừng <span id="TenKHValue"></span> đã quay trở lại !</b></h1>
+        <div class="form-inf-parent">
+            <div class="form-inf">
+                <div class="row">
+                    <div class="col">
+                        <div class="inf-menu">
+                            <a onclick="location.href='@Url.Action("InfUser","LogIn")'" href="#" style="text-decoration:none;"><ion-icon name="person-circle-outline"></ion-icon><span style="font-size:20px; margin-left:8px;">Thông tin tài khoản </span></a>
+                            <a onclick="location.href='@Url.Action("TicketInf","LogIn")'"  href="#" style="text-decoration:none;"><ion-icon name="ticket-outline"></ion-icon><span style="font-size:20px; margin-left:8px;">Quản lý vé xe</span></a>
+                            <a onclick="location.href='@Url.Action("Logout","LogIn")'"  href="#" style="text-decoration:none;"><ion-icon name="log-out-outline"></ion-icon><span style="font-size: 20px; margin-left: 8px;">Đăng xuất</span></a>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="show-inf">
+                            <h3 style="text-align:center;"><b>Thông tin tài khoản </b> </h3>
+                            <div class="show-inf-child">
+                                <div class="mb-3 row">
+                                    <label for="inputCCCD" class="col-sm-2 col-form-label">CCCD:</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" maxlength="12" class="form-control" id="inputCCCD" value="@Model.CCCD" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputName" class="col-sm-2 col-form-label">Họ và tên :</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="inputName" value="@Model.TenKhachHang">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputNumber" class="col-sm-2 col-form-label">SĐT:</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" maxlength="11" class="form-control" inputmode="numeric" id="inputNumber" value="@Model.SDT">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputName" class="col-sm-2 col-form-label">Tuổi:</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" maxlength="2" class="form-control" id="inputName" value="@Model.Tuoi">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

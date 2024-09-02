@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="79d9e8431f444ef187f7a8fdade25390" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBenXeModel.Chuyen" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.DichVu" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.Ghe" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.HangXe" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.Khach" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.LichTrinh_Tram" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.LoaiXe" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.NhanVien" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.TinhThanh" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.Tram" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.Ve" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBenXeModel.Xe" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QLBenXeModel.FK__Chuyen__DiemBatD__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__Chuyen__DiemDen__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__LichTrinh__MaChu__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__Xe__MaChuyen__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__Ghe__Xe__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__Ve__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__Xe__MaHangXe__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__Ve__MaKhach__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__LichTrinh__MaTra__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__Xe__LoaiXe__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.FK__Tram__MaTinh__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBenXeModel.CTDichVu" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

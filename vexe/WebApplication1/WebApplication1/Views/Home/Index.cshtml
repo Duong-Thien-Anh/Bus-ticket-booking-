@@ -1,0 +1,69 @@
+﻿@model WebApplication1.Models.Khach
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    List<WebApplication1.Models.TinhThanh> danhsachTinh = new WebApplication1.Controllers.HomeController().DanhSachTinhThanh();
+}
+
+<div class="theme">
+    @ViewBag.idkhach = @ViewBag.Khach
+    <div class="content1-index">
+        <h1><b>Vexehay - cam kết hoàn 150% nếu nhà xe không giữ vé</b></h1>
+        <div class="menu-mini">
+            <div class="red">
+                <nav class="navigations">
+                    <a href="#"><i class="fa-solid fa-bus"></i> Xe giường nằm</a>
+                    <a href="#"><i class="fa-solid fa-car"></i> Xe thường</a>
+                </nav>
+            </div>
+            @using (Html.BeginForm("TimChuyenXe", "Home", FormMethod.Post))
+            {
+                <div class="blue">
+                    <div class="area-input-button">
+                        <div class="area-input">
+                            <div class="box-input1">
+                                <i class="fa-regular fa-circle-dot"></i>
+                                @Html.DropDownList("DiemBatDau", new SelectList(danhsachTinh, "MaTinh", "TenTinh"), " Điểm đi", new { @class = "input1" })
+                            </div>
+                            <div class="box-input2">
+                                <i class="fa-solid fa-location-dot"></i>
+                                @Html.DropDownList("DiemDen", new SelectList(danhsachTinh, "MaTinh", "TenTinh"), " Điểm đến ", new { @class = "input2" })
+                            </div>
+                            <div class="box-input4">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                @Html.TextBox("date", null, new { @class = "input4", type = "date" })
+                            </div>
+                        </div>
+                        <button class="search-btn" type="submit">Tìm kiếm</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@*<div class="content2-index">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/img/banner-qc.png" style="width:;" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/img/banner-qc2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/img/banner-qc3.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>*@
+
+
+

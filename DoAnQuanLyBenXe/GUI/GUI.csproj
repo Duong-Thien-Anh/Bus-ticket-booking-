@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEFC46C0-26AD-4F81-9575-A3A3FE664EAA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLChuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLChuyen.Designer.cs">
+      <DependentUpon>frmQLChuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLDanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLDanhThu.Designer.cs">
+      <DependentUpon>frmQLDanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLDichVu.Designer.cs">
+      <DependentUpon>frmQLDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLHangXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLHangXe.Designer.cs">
+      <DependentUpon>frmQLHangXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLKhachHang.Designer.cs">
+      <DependentUpon>frmQLKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLLoaiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLLoaiXe.Designer.cs">
+      <DependentUpon>frmQLLoaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLNhanVien.Designer.cs">
+      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLVe.Designer.cs">
+      <DependentUpon>frmQLVe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLXe.Designer.cs">
+      <DependentUpon>frmQLXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLTinhThanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLTinhThanh.Designer.cs">
+      <DependentUpon>frmQLTinhThanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLChuyen.resx">
+      <DependentUpon>frmQLChuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLDanhThu.resx">
+      <DependentUpon>frmQLDanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLDichVu.resx">
+      <DependentUpon>frmQLDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLHangXe.resx">
+      <DependentUpon>frmQLHangXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLKhachHang.resx">
+      <DependentUpon>frmQLKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLLoaiXe.resx">
+      <DependentUpon>frmQLLoaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLNhanVien.resx">
+      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLTinhThanh.resx">
+      <DependentUpon>frmQLTinhThanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLVe.resx">
+      <DependentUpon>frmQLVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLXe.resx">
+      <DependentUpon>frmQLXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vw-bus-1845719_1280.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{49031cca-2d9e-43e3-98af-10dd24c7158f}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DesignControl\DesignControl.csproj">
+      <Project>{716BCE45-4EDC-4FD0-93E6-6395DDBB7B1A}</Project>
+      <Name>DesignControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hyundai-universe-4-15466488907371579447485.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reject1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\dat.png" />
+    <Content Include="Resources\khoa.png" />
+    <Content Include="Resources\trong.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

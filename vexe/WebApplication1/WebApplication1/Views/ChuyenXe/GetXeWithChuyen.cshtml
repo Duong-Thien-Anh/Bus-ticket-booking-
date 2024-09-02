@@ -1,0 +1,92 @@
+﻿@model IEnumerable<WebApplication1.Models.Xe>
+@{
+    var UserId = Session["UserId"];
+    ViewBag.Title = "Chuyen xe theo hãng";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    List<WebApplication1.Models.TinhThanh> danhsachTinh = new WebApplication1.Controllers.HomeController().DanhSachTinhThanh();
+
+}
+<div class="theme-timchuyen">
+    <div class="content">
+        @*đây là phần div để nội dung không bị che khuất*@
+        <div class="content1-index">
+            <h1><b>Vexehay - cam kết hoàn 150% nếu nhà xe không giữ vé</b></h1>
+            <div class="menu-mini">
+                <div class="red">
+                    <nav class="navigations">
+                        <a href="#"><i class="fa-solid fa-bus"></i> Xe giường nằm</a>
+                        <a href="#"><i class="fa-solid fa-car"></i> Xe thường</a>
+                    </nav>
+                </div>
+                @using (Html.BeginForm("TimChuyenXe", "Home", FormMethod.Post))
+                {
+                    <div class="blue">
+                        <div class="area-input-button">
+                            <div class="area-input">
+                                <div class="box-input1">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    @Html.DropDownList("DiemBatDau", new SelectList(danhsachTinh, "MaTinh", "TenTinh"), "Điểm đi", new { @class = "input1" })
+                                </div>
+                                <div class="box-input2">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    @Html.DropDownList("DiemDen", new SelectList(danhsachTinh, "MaTinh", "TenTinh"), "Điểm đến", new { @class = "input2" })
+                                </div>
+                                <div class="box-input4">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    @Html.TextBox("date", null, new { @class = "input4", type = "date" })
+                                </div>
+                            </div>
+                            <button class="search-btn" type="submit">Tìm kiếm</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-xnchuyen ">
+    <h2>Kết quả tìm kiếm chuyến đi</h2>
+</div>
+<div class="background-chonxe">
+
+    <div class="content-xnchuyen">
+
+        @if (Model != null)
+        {
+            foreach (WebApplication1.Models.Xe item in Model)
+            {
+                if (item.TrangThai == "Hoạt động")
+                {
+                    <div class="row">
+                        <div class="col">
+                            <div class="inf-xnchuyen">
+                                    <p>@Html.Action("GetHangXe", "ChuyenXe", new { id = item.MaXe })</p>
+                                    <p>Số xe: @item.SoXe</p>
+                                    <p>Tên tài xế: @item.TenTaiXe</p>
+                                    <p>Loại xe: @Html.Action("GetLoaiXe", "ChuyenXe", new { id = item.LoaiXe })</p>
+                                    <p>Thời gian xuất phát: @item.TGXuatPhat.Value.TimeOfDay</p>
+                                    <p>Số ghế còn trống: @Html.Action("GetGheTrong", "ChuyenXe", new { idxe = item.MaXe })</p>
+                                    <p>Giá: @Html.Action("SwitchToVND", "ChuyenXe", new { value = item.Gia })</p>
+                                    <button onclick="location.href='@Url.Action("XacNhanVe", "ChuyenXe", new { idxe = item.MaXe})'">Chọn xe</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="img-xe-container">
+                                <div class="bieutuong">Xác nhận tức thì</div>
+                                <img class="img-xe" src="~/Content/img/Anh-xe.jpg" alt=" Hình ảnh xe buýt chở khách" />
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            }
+        }
+        else
+        {
+            <p style="align-content:center;">Không tìm thấy chuyến xe đi từ @ViewBag.DiemBatDau đến @ViewBag.DiemDen vào ngày @ViewBag.Ngay</p>
+        }
+    </div>
+</div>
+
+
+
